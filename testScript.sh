@@ -2,7 +2,7 @@
 echo "***************TestScriptStarted************************"
 pathToSyntactic=$WORKSPACE
 . /home/krishna/softwares/anaconda3/bin/activate base
-hostPort=10.24.4.113:9020
+hostPort=0.0.0.0:9020
 processToKillOnPort=[9]020
 processName=test:app
 echo "Anaconda environment setup is done at `pwd`"
