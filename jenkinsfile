@@ -12,7 +12,7 @@ node {
 
         stage 'Test'
             sh '. /home/krishna/softwares/anaconda3/bin/activate'
-            sh ' ./testScript.sh
+            sh ' ./testScript.sh'
             sh 'echo "testScript is successfull"'
 
         stage 'Deploy'
