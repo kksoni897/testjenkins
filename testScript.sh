@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "***************TestScriptStarted************************"
-pathToSyntactic=$WORKSPACE/MachineLearningLayer/
-. /home/server-admin/installedsoftwares/anaconda3/bin/activate base
+pathToSyntactic=$WORKSPACE
+. /home/krishna/softwares/anaconda3/bin/activate base
 hostPort=10.24.4.113:9020
 processToKillOnPort=[9]020
 processName=test:app
