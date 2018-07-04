@@ -9,7 +9,7 @@ hostPort=0.0.0.0:9030
 processToKillOnPort=[9]030
 processName=test:app
 echo "Anaconda environment setup is done at `pwd`"
-nohup gunicorn -w 1 --threads=12 -b $hostPort -p pidfile $processName > scriptOut 2>&1 &
+sudo nohup gunicorn -w 1 --threads=12 -b $hostPort -p pidfile $processName > scriptOut 2>&1 &
 pid=$!
 echo "new PID $pid"
 status=true
@@ -30,4 +30,4 @@ while $status
             break
         fi
     done
-cat scriptOut.text
+cat scriptOut
