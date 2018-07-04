@@ -18,6 +18,7 @@ while $status
         response=$(curl -s -o /dev/null -w "%{http_code}\n" http://$hostPort/test --connect-timeout 2)
         if [ $response -eq 200 ]; then
             status=false
+	    sudo tar -zcvf mydir.tar ./*.*
         fi
         echo "Response is : $response"
         sleep 2

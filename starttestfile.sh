@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "***************Deployment Script Started************************"
-pathToSyntactic=$WORKSPACE
+sudo tar -zxvf mydir.tar /home/krishna/deploy/
+cd /home/krishna/deploy/
 . /home/krishna/softwares/anaconda3/bin/activate base
 hostPort=0.0.0.0:9020
 processToKillOnPort=[9]020
@@ -52,8 +53,3 @@ while $status
         fi
     done
 cat scriptOut.text
-rm -rf PotentialNewOrchestrator
-rm -rf Structure-*
-cd $WORKSPACE
-cd ..
-rm -rf OrchestratorDeploy@tmp
