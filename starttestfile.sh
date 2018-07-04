@@ -8,29 +8,6 @@ processToKillOnPort=[9]020
 processName=test:app
 echo "Anaconda environment setup is done at `pwd`"
 cd $pathToSyntactic
-if [ -e "pidfile" ]; then
-   PID=`cat pidfile`
-   echo "old PID $PID"
-   if kill `cat pidfile`; then
-        while s=`ps -p $PID -o s=` && [[ "$s" && "$s" != 'Z' ]]; do sleep 1; done
-        echo "Process killed using pidfile"
-   else
-        for pid in $( ps aux |ps -ef | grep $processToKillOnPort | awk '{print $2}');
-            do 
-                kill -9 $pid
-                while s=`ps -p $pid -o s=` && [[ "$s" && "$s" != 'Z' ]]; do sleep 1; done
-            done
-    fi
-else
-
-    for pid in $( ps aux |ps -ef | grep $processToKillOnPort | awk '{print $2}');
-        do 
-            kill -9 $pid
-            while s=`ps -p $pid -o s=` && [[ "$s" && "$s" != 'Z' ]]; do sleep 1; done
-        done
-        
-fi
-rm scriptOut.text
 nohup gunicorn -w 1 --threads=12 -b $hostPort -p pidfile $processName > scriptOut.text 2>&1 &
 pid=$!
 echo "new PID $pid"
