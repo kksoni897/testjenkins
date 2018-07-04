@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "***************Deployment Script Started************************"
-sudo tar -zxvf mydir.tar /home/krishna/deploy/
+tar -zxvf mydir.tar /home/krishna/deploy/
 cd /home/krishna/deploy/
 . /home/krishna/softwares/anaconda3/bin/activate base
 hostPort=0.0.0.0:9020
