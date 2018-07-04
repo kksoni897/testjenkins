@@ -20,12 +20,13 @@ while $status
             status=false
 	    rm mydir.tar
 	    tar -zcvf mydir.tar ./*.*
+	    pwd
         fi
         echo "Response is : $response"
         sleep 2
         time=`expr $time + 2`
         if [ $time -eq 10 ]; then
-            cat scriptOut.text
+            cat scriptOut
             exit 1
             break
         fi
