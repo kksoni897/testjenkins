@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "***************Deployment Script Started************************"
-cp mydir.tar /home/krishna/deploy/
+sudo cp mydir.tar /home/krishna/deploy/
 cd /home/krishna/deploy/
 tar -zxvf mydir.tar
 cd /home/krishna/deploy/
