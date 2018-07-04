@@ -26,7 +26,7 @@ while $status
         sleep 2
         time=`expr $time + 2`
         if [ $time -eq 10 ]; then
-            cat scriptOut.text
+            cat scriptOut
             exit 1
             break
         fi
